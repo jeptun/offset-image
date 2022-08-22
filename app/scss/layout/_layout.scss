@@ -1,0 +1,56 @@
+@use "../globals/" as g;
+@use "../util/" as u;
+@use "../mixin/" as m;
+
+.hero {
+  position: relative;
+  padding-block: 8.33333vw;
+  width: 100%;
+  height: 100%;
+}
+.bg {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+  height: 58.33333vw;
+  background-color: #000000;
+  @include u.breakpoint-up(small) {
+    width: 58.33333vw;
+    height: 58.33333vw;
+  }
+}
+.image {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  width: 71.66667vw;
+  height: 71.66667vw;
+  margin-left: 8.33333vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url(https://dr.savee-cdn.com/things/6/2/4ef5746f5574a0f45463d3.gif);
+  @include u.breakpoint-up(small) {
+    width: 41.66667vw;
+    height: 41.66667vw;
+  }
+}
+.title {
+  position: absolute;
+  z-index: 2;
+  background-color: hsl(var(--white));
+  padding: 1.3rem;
+  mix-blend-mode: difference;
+  @include u.breakpoint-up(small) {
+    left: 50vw;
+  }
+}
+h1 {
+  font-size: u.rem(32);
+  font-weight: 700;
+}
+p {
+  font-weight: 600;
+}
